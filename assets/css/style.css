@@ -1,0 +1,33 @@
+h1 {
+	text-align: center;
+	background: url(../images/superherocollage.jpg) no-repeat center center fixed;
+	background-size: cover;
+	height: 200px;
+	margin-top: 0px;
+}
+.container{
+	padding:0;
+}
+.hero{
+	text-align: center;
+	margin: 10px;
+    float: left;
+}
+.herobtn{
+	margin:5px;
+}
+#newhero{
+	width: 100%;
+	border:2px solid #3a67a2;;
+}
+#addhero{
+	background-color: #cc010b;
+	color:#0d2e58;
+}
+#searchlabel{
+	color:#3a67a2;
+	margin:20px 0px;
+}
+.gifrow{
+	margin:0 auto;
+}
