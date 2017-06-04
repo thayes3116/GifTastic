@@ -8,6 +8,10 @@ h1 {
 .container{
 	padding:0;
 }
+.rating{
+	color:#3a67a2;
+	font-weight: bold;
+}
 .hero{
 	text-align: center;
 	margin: 10px;
@@ -15,6 +19,8 @@ h1 {
 }
 .herobtn{
 	margin:5px;
+	background-color: #0d2e58;
+	color:#cc010b;
 }
 #newhero{
 	width: 100%;
@@ -25,8 +31,10 @@ h1 {
 	color:#0d2e58;
 }
 #searchlabel{
+	text-align: center;
 	color:#3a67a2;
 	margin:20px 0px;
+	font-weight: bold;
 }
 .gifrow{
 	margin:0 auto;
