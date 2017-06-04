@@ -32,11 +32,7 @@ $(document).ready(function() {
             $("#buttons").append(newbutton);
         }
     }
-
-
-
-
-// }    		
+   		
     function displayGif() {
     	$(".herogifs").empty();
         var apikey = "dc6zaTOxFJmzC";
@@ -54,30 +50,20 @@ $(document).ready(function() {
                 var rating = response.data[i].rating;
                 var prating = $("<p class = rating>").text("Rating: " + rating);
                 herodiv.prepend(prating);
-                var herogifsrcstill = response.data[i].images.fixed_width_still.url;
-                //var herogifsrc = response.data[i].images.fixed_width.url;
-                var herogifstill = $("<img class = heroimg>").attr("src", herogifsrcstill).val(i);
-                    
+                var herogifstill = $("<img class = heroimg>").attr("src", response.data[i].images.fixed_width_still.url).val(i);   
                 herodiv.prepend(herogifstill);
                 $(".herogifs").append(herodiv);
-}
+            }
             
             $(".heroimg").on("click", function(event) {
-                    event.preventDefault();
+                    // event.preventDefault();
                     
                 if (animate == 0){ 
-                    //console.log("heroimg click");
-                    //console.log(this.value)
-                    var imgvalue = this.value;
-                    //console.log(imgvalue)
-                    $(this).attr("src", response.data[imgvalue].images.fixed_width.url);
+                    $(this).attr("src", response.data[this.value].images.fixed_width.url);
                     animate++
-                    console.log(animate);
                 }else{
-                    var imgvalue = this.value;
-                    $(this).attr("src", response.data[imgvalue].images.fixed_width_still.url);
+                    $(this).attr("src", response.data[this.value].images.fixed_width_still.url);
                     animate--
-                    console.log(animate);
                 }
                 });
    
@@ -85,10 +71,5 @@ $(document).ready(function() {
         });
     };
 
-    $(document).on("click", ".herobtn", displayGif);
-
-   
-
-
-   				
+    $(document).on("click", ".herobtn", displayGif); 				
 });
