@@ -65,7 +65,7 @@ $(document).ready(function() {
                     $(this).attr("src", response.data[this.value].images.fixed_width_still.url);
                     animate--
                 }
-                });
+            });
    
             
         });
