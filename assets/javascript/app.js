@@ -37,7 +37,7 @@ $(document).ready(function() {
     	$(".herogifs").empty();
         var apikey = "dc6zaTOxFJmzC";
         var typedhero = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + typedhero + "&limit=10&api_key=" + apikey;
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + typedhero + "&limit=10&api_key=" + apikey;
 
         $.ajax({
             url: queryURL,
