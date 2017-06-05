@@ -21,6 +21,10 @@ h1 {
 	margin:5px;
 	background-color: #0d2e58;
 	color:#cc010b;
+}	
+.herobtn:hover{
+	background-color: #cc010b;
+	color:#0d2e58;
 }
 #newhero{
 	width: 100%;
@@ -30,6 +34,11 @@ h1 {
 	background-color: #cc010b;
 	color:#0d2e58;
 }
+#addhero:hover{
+	background-color: #0d2e58;
+	color:#cc010b;
+}
+
 #searchlabel{
 	text-align: center;
 	color:#3a67a2;
@@ -39,3 +48,12 @@ h1 {
 .gifrow{
 	margin:0 auto;
 }
+.heroimg:hover{
+	border:1px solid #cc010b;
+}
+
+
+
+
+
+
