@@ -4,9 +4,9 @@ var animate = 0;
 //get the document ready
 $(document).ready(function() {
     console.log("ready!");
-
+    //create button when doc opens
     createButton();
-
+    //Add new hero button clicked
     $("#addhero").on("click", function(event) {
         event.preventDefault();
 
@@ -16,6 +16,7 @@ $(document).ready(function() {
             if(hero !== ""){
                 //Add user input to array and fire function to make new button
                 topics.push(hero);
+                //run create button function
                 createButton();
             }
     });
@@ -23,7 +24,7 @@ $(document).ready(function() {
     function createButton() {
         //empty button div to prevent repeat buttons
         $("#buttons").empty();
-
+        //create buttons and give attributes
         for (var i = 0; i < topics.length; i++) {
             var newbutton = $("<button>");
             newbutton.addClass("herobtn");
@@ -32,7 +33,7 @@ $(document).ready(function() {
             $("#buttons").append(newbutton);
         }
     }
-   		
+    //function to display gifs
     function displayGif() {
     	$(".herogifs").empty();
         var apikey = "dc6zaTOxFJmzC";
@@ -44,7 +45,8 @@ $(document).ready(function() {
             method: "GET"
         }).done(function(response) {
             console.log(response);
-
+            //run for loop to create hero div to appear with rating
+            //and img
             for (var i = 0; i < 10; i++) {
                 var herodiv = $("<div class = hero>");
                 var rating = response.data[i].rating;
@@ -54,10 +56,9 @@ $(document).ready(function() {
                 herodiv.prepend(herogifstill);
                 $(".herogifs").append(herodiv);
             }
-            
-            $(".heroimg").on("click", function(event) {
-                    // event.preventDefault();
-                    
+            //change img src on buuton click to toogle between 
+            //still and animated img
+            $(".heroimg").on("click", function(event) { 
                 if (animate == 0){ 
                     $(this).attr("src", response.data[this.value].images.fixed_width.url);
                     animate++
@@ -70,6 +71,6 @@ $(document).ready(function() {
             
         });
     };
-
+    //fire displaygif function when hero button is clicked
     $(document).on("click", ".herobtn", displayGif); 				
 });
